@@ -5,6 +5,14 @@ This repository contains an simple application to test cameras using the Synexsi
   * Raspberry Pi 3B (Windows Core IoT does not support Pi 3B+ or 4)
   * Windows Core IoT
   * Vaddio Roboshot Elite 12 camera
+  
+### Synexsis NuGet packages used - Available at the NuGet Repository (search Enkadia and check prerelease)
+  * Enkadia.Synexsis.Extensions
+  * Enkadia.Synexsis.Components.Cameras
+  * Enkadia.Synexsis.ComponentFramework
+  
+### Additional Microsoft NuGet packages used
+  * Microsoft.Extensions.DependencyInjection;
 
 ### Configuring your components
 Synexsis builds your components by reading values from an `appsettings.json` file, located at the root of your program's runtime directory. Place your Synexsis Test License in the same folder.
