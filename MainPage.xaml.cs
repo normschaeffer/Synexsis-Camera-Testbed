@@ -15,7 +15,7 @@ namespace Synexsis_Camera_Testbed
         private IServiceCollection serviceCollection;
         private IServiceProvider serviceProvider;
 
-        //Add the Roboshot camera, using the Roboshot Elite
+        //Add the Roboshot camera, using the Roboshot Elite component
         public RoboshotElite camera;
 
         //Add camera speed variables, if desired
@@ -23,6 +23,14 @@ namespace Synexsis_Camera_Testbed
         private int PanSpeed = 9;
         private int ZoomSpeed = 8;
 
+        //Create a preset array
+        private readonly double[,] Preset =
+        {
+            {-21.06, 34, 2.59}, //Preset 1
+            {-65.1, -19.79, 3.46}, //Preset 2
+            { 50.33,13.75, 2.23} //Preset 3
+        };
+        
         public MainPage()
         {
             this.InitializeComponent();
@@ -96,6 +104,30 @@ namespace Synexsis_Camera_Testbed
             }
         }
 
+        private async void BtnZoomIn_OnHolding(object sender, HoldingRoutedEventArgs e)
+        {
+            if (e.HoldingState == HoldingState.Started)
+            {
+                await camera.ZoomInAtSpeed(ZoomSpeed);
+            }
+            else
+            {
+                await camera.Stop();
+            }
+        }
+
+        private async void BtnZoomOut_OnHolding(object sender, HoldingRoutedEventArgs e)
+        {
+            if (e.HoldingState == HoldingState.Started)
+            {
+                await camera.ZoomOutAtSpeed(ZoomSpeed);
+            }
+            else
+            {
+                await camera.Stop();
+            }
+        }
+
         private async void BtnHome_Click(object sender, RoutedEventArgs e) => await camera.Home();
 
         private async void BtnStandby_OnChecked(object sender, RoutedEventArgs e)
@@ -113,7 +145,26 @@ namespace Synexsis_Camera_Testbed
         }
 
 
+        private void BtnPreset1_OnClick(object sender, RoutedEventArgs e)
+        {
+            camera.SetPanPosition(Preset[0, 0], 20);
+            camera.SetTiltPosition(Preset[0, 1], 20);
+            camera.SetZoomPosition(Preset[0, 2], 20);
+        }
 
+        private void BtnPreset2_OnClick(object sender, RoutedEventArgs e)
+        {
+            camera.SetPanPosition(Preset[1, 0], 20);
+            camera.SetTiltPosition(Preset[1, 1], 20);
+            camera.SetZoomPosition(Preset[1, 2], 20);
+        }
+
+        private void BtnPreset3_OnClick(object sender, RoutedEventArgs e)
+        {
+            camera.SetPanPosition(Preset[2, 0], 20);
+            camera.SetTiltPosition(Preset[2, 1], 20);
+            camera.SetZoomPosition(Preset[2, 2], 20);
+        }
     }
 }
 
