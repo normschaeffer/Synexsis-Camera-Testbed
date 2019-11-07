@@ -24,12 +24,13 @@ This is an example for a release version running on a Raspberry Pi:
    ApplicationName\bin\ARM\Release\AppX
 
 ```
-
 #### Troubleshooting
 If the application fails to start, verify the license and appsettings.json files are in the correct folder.
 
+
+
 ### Creating the appsettings.json file
-This appsettings file demonstrates the configuration information needed to support a Vaddio Roboshot camera.
+This sample appsettings file demonstrates the configuration information needed to support a Vaddio Roboshot camera.
 
 #### Sample appsettings.json
 ```json
@@ -38,7 +39,7 @@ This appsettings file demonstrates the configuration information needed to suppo
 		"IPAddress": "192.168.1.200",
 		"Port": 23,
 		"Username": "admin",
-    "Password": "password"
+                "Password": "password"
 	},
 	"License": {
 		"OfflineActivation": "true",
