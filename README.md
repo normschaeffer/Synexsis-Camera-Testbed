@@ -2,7 +2,7 @@
 This repository contains an simple application to test cameras using the Synexsis camera module.
 
 ### Devices used:
-  * Raspberry Pi 3B (Windows Core IoT does not support Pi 3B+ or 4)
+  * Raspberry Pi 3B (*__Windows Core IoT does not support Pi 3B+ or 4__*)
   * Windows Core IoT
   * Vaddio Roboshot Elite 12 camera
   
