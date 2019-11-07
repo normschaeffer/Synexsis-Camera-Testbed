@@ -34,7 +34,7 @@ This appsettings file demonstrates the configuration information needed to suppo
 #### Sample appsettings.json
 ```json
 {
-	"RoboshotCamera": {
+    "RoboshotCamera": {
 		"IPAddress": "192.168.1.200",
 		"Port": 23,
 		"Username": "admin",
