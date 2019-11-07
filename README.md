@@ -1,5 +1,5 @@
 ## Enkadia Synexsis Camera Test Platform - Windows UWP
-This repository contains an simple application to test cameras using the Synexsis camera module.
+A simple application to test cameras using the Synexsis camera module.
 
 ### Devices and software used for this project:
   * Raspberry Pi 3B (*__Windows Core IoT does not support Pi 3B+ or 4__*)
