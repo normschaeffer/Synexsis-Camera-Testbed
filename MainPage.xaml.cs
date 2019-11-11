@@ -42,7 +42,7 @@ namespace Synexsis_Camera_Testbed
             serviceCollection.AddSynexsis(); 
             serviceCollection.AddTransient<RoboshotElite>(); //set the device type to the Roboshot Elite module
             serviceProvider = serviceCollection.BuildServiceProvider();
-            camera = serviceProvider.ResolveWith<RoboshotElite>("RoboshotCamera"); // parameter is name of section key in appsetting. json file
+            camera = serviceProvider.ResolveWith<RoboshotElite>("RoboshotCamera"); // parameter is name of section key in appsettings.json file
 
             //Call function to get connected to the camera
             CameraConnect();
