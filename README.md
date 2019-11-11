@@ -8,7 +8,6 @@ A simple application to test cameras using the Synexsis camera module.
   * Vaddio Roboshot Elite 12 camera
   
 ### Synexsis NuGet packages used - Available at the NuGet Repository (search Enkadia and check prerelease)
-  * Enkadia.Synexsis.Extensions
   * Enkadia.Synexsis.Components.Cameras
   * Enkadia.Synexsis.ComponentFramework
   
