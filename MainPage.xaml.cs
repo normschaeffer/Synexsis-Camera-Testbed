@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using Windows.UI.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
+using Enkadia.Synexsis.ComponentFramework;
 using Enkadia.Synexsis.ComponentFramework.Extensions;
 using Enkadia.Synexsis.Components.Cameras.Vaddio;
 using Microsoft.Extensions.DependencyInjection;
@@ -37,10 +39,10 @@ namespace Synexsis_Camera_Testbed
 
             //Initialize the camera
             serviceCollection = new ServiceCollection();
-            serviceCollection.AddSynexsis();
-            serviceCollection.AddTransient<RoboshotElite>();
+            serviceCollection.AddSynexsis(); 
+            serviceCollection.AddTransient<RoboshotElite>(); //set the device type to the Roboshot Elite module
             serviceProvider = serviceCollection.BuildServiceProvider();
-            camera = serviceProvider.ResolveWith<RoboshotElite>("RoboshotCamera");
+            camera = serviceProvider.ResolveWith<RoboshotElite>("RoboshotCamera"); // parameter is name of section key in appsetting. json file
 
             //Call function to get connected to the camera
             CameraConnect();
@@ -48,12 +50,25 @@ namespace Synexsis_Camera_Testbed
 
         private async void CameraConnect()
         {
-            if (BtnStandby.IsChecked == true)
+            //return the camera state
+            ComponentResponse standbyStatus = await camera.GetStandbyMode();
+
+            //if camera is in standby, turn it on and update toggle button to reflect state
+            if (standbyStatus.Response.Equals("On"))
             {
                 await camera.StandbyOff();
                 BtnStandby.IsChecked = false;
                 BtnStandby.Content = "Standby Off";
             }
+
+            //if application starts with camera standby off, update toggle button to reflect state
+            if (standbyStatus.Response.Equals("Off"))
+            {
+                BtnStandby.IsChecked = false;
+                BtnStandby.Content = "Standby Off";
+            }
+            
+
         }
 
         private async void BtnTiltUp_Holding(object sender, HoldingRoutedEventArgs e)
