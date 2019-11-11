@@ -1,8 +1,9 @@
 ## Enkadia Synexsis Camera Test Platform - Windows UWP
-This repository contains an simple application to test cameras using the Synexsis camera module.
+A simple application to test cameras using the Synexsis camera module.
 
-### Devices used:
-  * Raspberry Pi 3B (Windows Core IoT does not support Pi 3B+ or 4)
+### Devices and software used for this project:
+  * Raspberry Pi 3B (*__Windows Core IoT does not support Pi 3B+ or 4__*)
+  * Raspberry Pi 7" Touch Display
   * Windows Core IoT
   * Vaddio Roboshot Elite 12 camera
   
@@ -24,17 +25,22 @@ This is an example for a release version running on a Raspberry Pi:
    ApplicationName\bin\ARM\Release\AppX
 
 ```
+#### Troubleshooting
+If the application fails to start, verify the license and appsettings.json files are in the correct folder.
 
-This example demonstrates registering a projector which supports Vaddio Roboshot Cameras.
+
+
+### Creating the appsettings.json file
+This sample appsettings file demonstrates the configuration information needed to support a Vaddio Roboshot camera.
 
 #### Sample appsettings.json
 ```json
 {
-	"RoboshotCamera": {
+    "RoboshotCamera": {
 		"IPAddress": "192.168.1.200",
 		"Port": 23,
 		"Username": "admin",
-    "Password": "password"
+                "Password": "password"
 	},
 	"License": {
 		"OfflineActivation": "true",
