@@ -3,7 +3,7 @@ using Windows.UI.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
-using Enkadia.Synexsis.Extensions;
+using Enkadia.Synexsis.ComponentFramework.Extensions;
 using Enkadia.Synexsis.Components.Cameras.Vaddio;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -20,7 +20,7 @@ namespace Synexsis_Camera_Testbed
 
         //Add camera speed variables, if desired
         private int TiltSpeed = 12;
-        private int PanSpeed = 9;
+        //private int PanSpeed = 9;
         private int ZoomSpeed = 8;
 
         //Create a preset array
@@ -40,7 +40,7 @@ namespace Synexsis_Camera_Testbed
             serviceCollection.AddSynexsis();
             serviceCollection.AddTransient<RoboshotElite>();
             serviceProvider = serviceCollection.BuildServiceProvider();
-            camera = serviceProvider.GetService<RoboshotElite>();
+            camera = serviceProvider.ResolveWith<RoboshotElite>("RoboshotCamera");
 
             //Call function to get connected to the camera
             CameraConnect();
