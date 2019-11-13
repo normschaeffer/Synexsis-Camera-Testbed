@@ -9,6 +9,10 @@ using Enkadia.Synexsis.ComponentFramework.Extensions;
 using Enkadia.Synexsis.Components.Cameras.Vaddio;
 using Microsoft.Extensions.DependencyInjection;
 
+
+/// <summary>
+/// Enkadia Synexsis Camera integration application
+/// </summary>
 namespace Synexsis_Camera_Testbed
 {
     public sealed partial class MainPage : Page
