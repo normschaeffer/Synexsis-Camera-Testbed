@@ -19,7 +19,7 @@ A simple application to test cameras using the Synexsis camera module.
    * Maximum Windows 10, version 1809
    
 #### NOTE THIS TEST PLATFORM REQUIRES THE USE OF AN ENKADIA TEST LICENSE. TO REQUEST A LICENSE PLEASE SEE [enkadia.com](https://www.enkadia.com)
-
+---
 ### Configuring your components
 Synexsis builds your components by reading values from an `appsettings.json` file, located at the root of your program's runtime directory. Place your Synexsis Test License in the same folder.
 
@@ -32,7 +32,7 @@ This is an example for a release version running on a Raspberry Pi:
 ```
 #### Troubleshooting
 If the application fails to start, verify the license and appsettings.json files are in the correct folder.
-
+---
 ### Creating the appsettings.json file
 This sample appsettings file demonstrates the configuration information needed to support a Vaddio Roboshot camera.
 
