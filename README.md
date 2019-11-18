@@ -32,6 +32,7 @@ This is an example for a release version running on a Raspberry Pi:
 ```
 #### Troubleshooting
 If the application fails to start, verify the license and appsettings.json files are in the correct folder.
+
 ---
 ### Creating the appsettings.json file
 This sample appsettings file demonstrates the configuration information needed to support a Vaddio Roboshot camera.
