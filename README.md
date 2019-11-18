@@ -6,6 +6,7 @@ A simple application to test cameras using the Synexsis camera module.
   * Raspberry Pi 7" Touch Display
   * Windows Core IoT
   * Vaddio Roboshot Elite 12 camera
+  * Netgear 8 port switch
   
 ### Synexsis NuGet packages used - Available at the NuGet Repository (search Enkadia and check prerelease)
   * Enkadia.Synexsis.Components.Cameras
