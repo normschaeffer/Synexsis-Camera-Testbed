@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Collections.Generic;
 using Windows.ApplicationModel.Core;
-using Windows.Services.Maps;
 using Windows.UI.Input;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
@@ -191,6 +189,7 @@ namespace Synexsis_Camera_Testbed
         private async void BtnExit_OnClick(object sender, RoutedEventArgs e)
         {
             //CoreApplication.Exit();
+
             AppRestartFailureReason result = await CoreApplication.RequestRestartAsync("System restarted");
 
             if (result == AppRestartFailureReason.NotInForeground || result == AppRestartFailureReason.Other)
