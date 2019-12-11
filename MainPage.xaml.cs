@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Collections.Generic;
+using Windows.ApplicationModel.Core;
+using Windows.Services.Maps;
 using Windows.UI.Input;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
@@ -10,11 +14,9 @@ using Enkadia.Synexsis.Components.Cameras.Vaddio;
 using Microsoft.Extensions.DependencyInjection;
 
 
-/// <summary>
-/// Enkadia Synexsis Camera integration application
-/// </summary>
 namespace Synexsis_Camera_Testbed
 {
+
     public sealed partial class MainPage : Page
     {
         //Add the Synexsis collection tools
@@ -29,13 +31,16 @@ namespace Synexsis_Camera_Testbed
         //private int PanSpeed = 9;
         private int ZoomSpeed = 8;
 
-        //Create a preset array
+        List<Preset> preset = new List<Preset>();
+        
+        //Create a three item, two-dimensional preset array that contains the PTZ information and speed 
         private readonly double[,] Preset =
         {
             {-21.06, 34, 2.59}, //Preset 1
             {-65.1, -19.79, 3.46}, //Preset 2
             { 50.33,13.75, 2.23} //Preset 3
         };
+        
         
         public MainPage()
         {
@@ -71,8 +76,6 @@ namespace Synexsis_Camera_Testbed
                 BtnStandby.IsChecked = false;
                 BtnStandby.Content = "Standby Off";
             }
-            
-
         }
 
         private async void BtnTiltUp_Holding(object sender, HoldingRoutedEventArgs e)
@@ -184,6 +187,22 @@ namespace Synexsis_Camera_Testbed
             camera.SetTiltPosition(Preset[2, 1], 20);
             camera.SetZoomPosition(Preset[2, 2], 20);
         }
+
+        private async void BtnExit_OnClick(object sender, RoutedEventArgs e)
+        {
+            //CoreApplication.Exit();
+            AppRestartFailureReason result = await CoreApplication.RequestRestartAsync("System restarted");
+
+            if (result == AppRestartFailureReason.NotInForeground || result == AppRestartFailureReason.Other)
+            {
+                MessageDialog message = new MessageDialog("System Restarting");
+                message.Title = "Touch Panel Restarting";
+            }
+        }
+    }
+
+    internal class Preset
+    {
     }
 }
 

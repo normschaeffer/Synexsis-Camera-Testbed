@@ -11,15 +11,16 @@
     <AssemblyName>Synexsis-Camera-Testbed</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
     <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <PackageCertificateThumbprint>E47B35E811A96D662378B1384328A2D7588166CB</PackageCertificateThumbprint>
-    <PackageCertificateKeyFile>D:\Synexsis-Camera-Testbed\Synexsis-Camera-Testbed_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>48DABB1CC82BA869FC4430E2B6EDE31F8A737B8F</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>
+    </PackageCertificateKeyFile>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
@@ -170,6 +171,9 @@
     </PackageReference>
     <PackageReference Include="Enkadia.Synexsis.Extensions">
       <Version>1.0.0-CI-20190819-231627</Version>
+    </PackageReference>
+    <PackageReference Include="Enkadia.Synexsis.Utilities">
+      <Version>1.0.2.14</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.9</Version>

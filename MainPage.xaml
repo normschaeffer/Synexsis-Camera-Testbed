@@ -127,5 +127,13 @@
                    HorizontalAlignment="Left"
                    TextAlignment="Left"
                    FontSize="14"/>
+        <Button x:Name="BtnExit"
+                Grid.Row="5"
+                Grid.Column="7"
+                Margin="16"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Content="Exit"
+                Click="BtnExit_OnClick"/>
     </Grid>
 </Page>
