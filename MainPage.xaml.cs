@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 using Windows.ApplicationModel.Core;
 using Windows.UI.Input;
 using Windows.UI.Popups;
@@ -10,6 +11,7 @@ using Enkadia.Synexsis.ComponentFramework;
 using Enkadia.Synexsis.ComponentFramework.Extensions;
 using Enkadia.Synexsis.Components.Cameras.Vaddio;
 using Microsoft.Extensions.DependencyInjection;
+using System.Threading;
 
 
 namespace Synexsis_Camera_Testbed
@@ -190,12 +192,17 @@ namespace Synexsis_Camera_Testbed
         {
             //CoreApplication.Exit();
 
+            MessageDialog message = new MessageDialog("System Restarting");
+            message.Title = "Touch Panel Restarting";
+
+            Thread.Sleep(2000);
+
             AppRestartFailureReason result = await CoreApplication.RequestRestartAsync("System restarted");
 
             if (result == AppRestartFailureReason.NotInForeground || result == AppRestartFailureReason.Other)
             {
-                MessageDialog message = new MessageDialog("System Restarting");
-                message.Title = "Touch Panel Restarting";
+                //MessageDialog message = new MessageDialog("System Restarting");
+                //message.Title = "Touch Panel Restarting";
             }
         }
     }
