@@ -20,15 +20,15 @@ namespace Synexsis_Camera_Testbed
     public sealed partial class MainPage : Page
     {
         //Add the Synexsis collection tools
-        private IServiceCollection serviceCollection;
-        private IServiceProvider serviceProvider;
+        private readonly IServiceCollection serviceCollection;
+        private readonly IServiceProvider serviceProvider;
 
         //Add the Roboshot camera, using the Roboshot Elite component
         public RoboshotElite camera;
 
         //Add camera speed variables, if desired
         private int TiltSpeed = 12;
-        //private int PanSpeed = 9;
+        private int PanSpeed = 9;
         private int ZoomSpeed = 8;
 
         List<Preset> preset = new List<Preset>();
@@ -192,8 +192,7 @@ namespace Synexsis_Camera_Testbed
         {
             //CoreApplication.Exit();
 
-            MessageDialog message = new MessageDialog("System Restarting");
-            message.Title = "Touch Panel Restarting";
+            MessageDialog message = new MessageDialog("System Restarting") {Title = "Touch Panel Restarting"};
 
             Thread.Sleep(2000);
 
@@ -205,6 +204,64 @@ namespace Synexsis_Camera_Testbed
                 //message.Title = "Touch Panel Restarting";
             }
         }
+
+        private async void BtnTiltUp_OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.TiltUpAtSpeed(TiltSpeed);
+        }
+
+        private async void BtnTiltUp_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.Stop();
+        }
+
+        private async void BtnTiltDown_OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.TiltDownAtSpeed(TiltSpeed);
+        }
+
+        private async void BtnTiltDown_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.Stop();
+        }
+        private async void BtnPanLeft_OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.PanLeftAtSpeed(PanSpeed);
+        }
+
+        private async void BtnPanLeft_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.Stop();
+        }
+        private async void BtnPanRight_OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.PanRightAtSpeed(PanSpeed);
+        }
+
+        private async void BtnPanRight_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.Stop();
+        }
+
+        private async void BtnZoomIn_OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.ZoomInAtSpeed(ZoomSpeed);
+        }
+
+        private async void BtnZoomIn_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.Stop();
+        }
+
+        private async void BtnZoomOut_OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.ZoomInAtSpeed(ZoomSpeed);
+        }
+        private async void BtnZoomOut_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.Stop();
+        }
+
     }
 
     internal class Preset

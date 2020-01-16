@@ -167,7 +167,7 @@
       <Version>1.0.2-CI-20191104-225113</Version>
     </PackageReference>
     <PackageReference Include="Enkadia.Synexsis.Components.Cameras">
-      <Version>1.0.0.9</Version>
+      <Version>1.0.0.20116</Version>
     </PackageReference>
     <PackageReference Include="Enkadia.Synexsis.Extensions">
       <Version>1.0.0-CI-20190819-231627</Version>

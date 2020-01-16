@@ -43,7 +43,9 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Content="Up"
-                Holding="BtnTiltUp_Holding"/>
+                Holding="BtnTiltUp_Holding"
+                PointerPressed="BtnTiltUp_OnPointerPressed"
+                PointerReleased="BtnTiltUp_OnPointerReleased"/>
         <Button x:Name="BtnTiltDown"
                 Grid.Row="3"
                 Grid.Column="2"
@@ -51,7 +53,9 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Content="Down"
-                Holding="BtnTiltDown_Holding"/>
+                Holding="BtnTiltDown_Holding"
+                PointerPressed="BtnTiltDown_OnPointerPressed"
+                PointerReleased="BtnTiltDown_OnPointerReleased"/>
         <Button x:Name="BtnPanLeft"
                 Grid.Row="2"
                 Grid.Column="1"
@@ -59,7 +63,9 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Content="Left"
-                Holding="BtnPanLeft_Holding"/>
+                Holding="BtnPanLeft_Holding"
+                PointerPressed="BtnPanLeft_OnPointerPressed"
+                PointerReleased="BtnPanLeft_OnPointerReleased"/>
         <Button x:Name="BtnPanRight"
                 Grid.Row="2"
                 Grid.Column="3"
@@ -67,7 +73,9 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Content="Right"
-                Holding="BtnPanRight_Holding"/>
+                Holding="BtnPanRight_Holding"
+                PointerPressed="BtnPanRight_OnPointerPressed"
+                PointerReleased="BtnPanRight_OnPointerReleased"/>
         <Button x:Name="BtnZoomIn"
                 Grid.Row="1"
                 Grid.Column="4"
@@ -75,7 +83,9 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Content="Zoom In"
-                Holding="BtnZoomIn_OnHolding"/>
+                Holding="BtnZoomIn_OnHolding"
+                PointerPressed="BtnZoomIn_OnPointerPressed"
+                PointerReleased="BtnZoomIn_OnPointerReleased"/>
         <Button x:Name="BtnZoomOut"
                 Grid.Row="3"
                 Grid.Column="4"
@@ -83,7 +93,9 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Content="Zoom Out"
-                Holding="BtnZoomOut_OnHolding"/>
+                Holding="BtnZoomOut_OnHolding"
+                PointerPressed="BtnZoomOut_OnPointerPressed"
+                PointerReleased="BtnZoomOut_OnPointerReleased"/>
         <Button x:Name="BtnHome"
                 Grid.Row="2"
                 Grid.Column="2"
