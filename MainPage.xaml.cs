@@ -28,7 +28,7 @@ namespace Synexsis_Camera_Testbed
 
         //Add camera speed variables, if desired
         private int TiltSpeed = 12;
-        private int PanSpeed = 9;
+        private int PanSpeed = 15;
         private int ZoomSpeed = 8;
 
         List<Preset> preset = new List<Preset>();
@@ -78,6 +78,7 @@ namespace Synexsis_Camera_Testbed
             }
         }
 
+        #region Tilt Functions - touch and right-click mouse
         private async void BtnTiltUp_Holding(object sender, HoldingRoutedEventArgs e)
         {
             if (e.HoldingState == HoldingState.Started)
@@ -102,11 +103,35 @@ namespace Synexsis_Camera_Testbed
             }
         }
 
+        private async void BtnTiltUp_OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.TiltUpAtSpeed(TiltSpeed);
+        }
+
+        private async void BtnTiltUp_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.Stop();
+        }
+
+        private async void BtnTiltDown_OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.TiltDownAtSpeed(TiltSpeed);
+        }
+
+        private async void BtnTiltDown_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.Stop();
+        }
+
+        #endregion
+
+        #region Pan Functions - touch and  mouse right-click
+
         private async void BtnPanLeft_Holding(object sender, HoldingRoutedEventArgs e)
         {
             if (e.HoldingState == HoldingState.Started)
             {
-                await camera.PanLeft();
+                await camera.PanLeftAtSpeed(PanSpeed);
             }
             else
             {
@@ -118,13 +143,36 @@ namespace Synexsis_Camera_Testbed
         {
             if (e.HoldingState == HoldingState.Started)
             {
-                await camera.PanRight();
+                await camera.PanRightAtSpeed(PanSpeed);
             }
             else
             {
                 await camera.Stop();
             }
         }
+
+        private async void BtnPanLeft_OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.PanLeftAtSpeed(PanSpeed);
+        }
+
+        private async void BtnPanLeft_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.Stop();
+        }
+        private async void BtnPanRight_OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.PanRightAtSpeed(PanSpeed);
+        }
+
+        private async void BtnPanRight_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.Stop();
+        }
+
+        #endregion
+
+        #region Zoom functions - touch and mouse right-click
 
         private async void BtnZoomIn_OnHolding(object sender, HoldingRoutedEventArgs e)
         {
@@ -150,6 +198,28 @@ namespace Synexsis_Camera_Testbed
             }
         }
 
+        private async void BtnZoomIn_OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.ZoomInAtSpeed(ZoomSpeed);
+        }
+
+        private async void BtnZoomIn_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.Stop();
+        }
+
+        private async void BtnZoomOut_OnPointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.ZoomInAtSpeed(ZoomSpeed);
+        }
+        private async void BtnZoomOut_OnPointerReleased(object sender, PointerRoutedEventArgs e)
+        {
+            await camera.Stop();
+        }
+
+        #endregion
+
+        
         private async void BtnHome_Click(object sender, RoutedEventArgs e) => await camera.Home();
 
         private async void BtnStandby_OnChecked(object sender, RoutedEventArgs e)
@@ -204,64 +274,6 @@ namespace Synexsis_Camera_Testbed
                 //message.Title = "Touch Panel Restarting";
             }
         }
-
-        private async void BtnTiltUp_OnPointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            await camera.TiltUpAtSpeed(TiltSpeed);
-        }
-
-        private async void BtnTiltUp_OnPointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            await camera.Stop();
-        }
-
-        private async void BtnTiltDown_OnPointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            await camera.TiltDownAtSpeed(TiltSpeed);
-        }
-
-        private async void BtnTiltDown_OnPointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            await camera.Stop();
-        }
-        private async void BtnPanLeft_OnPointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            await camera.PanLeftAtSpeed(PanSpeed);
-        }
-
-        private async void BtnPanLeft_OnPointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            await camera.Stop();
-        }
-        private async void BtnPanRight_OnPointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            await camera.PanRightAtSpeed(PanSpeed);
-        }
-
-        private async void BtnPanRight_OnPointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            await camera.Stop();
-        }
-
-        private async void BtnZoomIn_OnPointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            await camera.ZoomInAtSpeed(ZoomSpeed);
-        }
-
-        private async void BtnZoomIn_OnPointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            await camera.Stop();
-        }
-
-        private async void BtnZoomOut_OnPointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            await camera.ZoomInAtSpeed(ZoomSpeed);
-        }
-        private async void BtnZoomOut_OnPointerReleased(object sender, PointerRoutedEventArgs e)
-        {
-            await camera.Stop();
-        }
-
     }
 
     internal class Preset
