@@ -31,8 +31,8 @@ namespace Synexsis_Camera_Testbed
         private int PanSpeed = 15;
         private int ZoomSpeed = 8;
 
-        List<Preset> preset = new List<Preset>();
-        
+        private List<(int CameraPreset, double XPosition, int PanSpeed, double YPosition, int TiltSpeed, double ZPosition, int ZoomSpeed)> PresetList { get; set; }
+
         //Create a three item, two-dimensional preset array that contains the PTZ information and speed 
         private readonly double[,] Preset =
         {
@@ -40,8 +40,12 @@ namespace Synexsis_Camera_Testbed
             {-65.1, -19.79, 3.46}, //Preset 2
             { 50.33,13.75, 2.23} //Preset 3
         };
-        
-        
+
+        private int cameraPreset { get; set; }
+        private double xPosition { get; set; }
+        private double yPosition { get; set; }
+        private double zPosition { get; set; }
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -258,6 +262,26 @@ namespace Synexsis_Camera_Testbed
             camera.SetZoomPosition(Preset[2, 2], 20);
         }
 
+        private void AddCameraPreset(int cameraPreset, double xPosition, int panSpeed, double yPosition,
+            int tiltSpeed, double zPosition, int zoomSpeed)
+        {
+ 
+        }
+
+        public async void GetCameraPreset()
+        {
+            var dummyResponse = await camera.GetPanPosition();
+            
+            var response = await camera.GetPanPosition();
+            xPosition = Convert.ToDouble(response.Response);
+            
+            response = await camera.GetTiltPosition();
+            yPosition = Convert.ToDouble(response.Response);
+
+            response = await camera.GetZoomPosition();
+            zPosition = Convert.ToDouble(response.Response);
+        }
+
         private async void BtnExit_OnClick(object sender, RoutedEventArgs e)
         {
             //CoreApplication.Exit();
@@ -274,10 +298,16 @@ namespace Synexsis_Camera_Testbed
                 //message.Title = "Touch Panel Restarting";
             }
         }
-    }
 
-    internal class Preset
-    {
+        private void BtnGetCameraPosition_OnClick(object sender, RoutedEventArgs e)
+        {
+            GetCameraPreset();
+        }
+
+        private void BtnSetCameraPosition_OnClick(object sender, RoutedEventArgs e)
+        {
+            AddCameraPreset(1, xPosition, 20, yPosition, 15, zPosition, 10);
+        }
     }
 }
 

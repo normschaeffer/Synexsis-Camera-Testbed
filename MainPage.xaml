@@ -129,6 +129,24 @@
                 VerticalAlignment="Stretch"
                 Content="Pre 3"
                 Click="BtnPreset3_OnClick"/>
+        <Button x:Name="BtnGetCameraPosition"
+                Grid.Row="5"
+                Grid.Column="4"
+                Margin="8"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Content="Get Position"
+                Click="BtnGetCameraPosition_OnClick"/>
+
+        <Button x:Name="BtnSetCameraPosition"
+                Grid.Row="5"
+                Grid.Column="5"
+                Margin="8"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Content="Set Position"
+                Click="BtnSetCameraPosition_OnClick">
+
 
         <TextBlock x:Name="TxtBlkCameraPosition"
                    Grid.Row="4"
