@@ -18,7 +18,7 @@
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <PackageCertificateThumbprint>48DABB1CC82BA869FC4430E2B6EDE31F8A737B8F</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>550F332301DFB70C1E2B1585EEE7689710F345B8</PackageCertificateThumbprint>
     <PackageCertificateKeyFile>
     </PackageCertificateKeyFile>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
@@ -173,7 +173,7 @@
       <Version>1.0.0-CI-20190819-231627</Version>
     </PackageReference>
     <PackageReference Include="Enkadia.Synexsis.Utilities">
-      <Version>1.0.4</Version>
+      <Version>1.0.5</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.9</Version>

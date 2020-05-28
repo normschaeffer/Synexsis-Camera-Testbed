@@ -145,7 +145,7 @@
                 HorizontalAlignment="Stretch"
                 VerticalAlignment="Stretch"
                 Content="Set Position"
-                Click="BtnSetCameraPosition_OnClick">
+                Click="BtnSetCameraPosition_OnClick"/>
 
 
         <TextBlock x:Name="TxtBlkCameraPosition"
