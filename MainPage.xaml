@@ -150,14 +150,15 @@
 
         <TextBlock x:Name="TxtBlkCameraPosition"
                    Grid.Row="4"
-                   Grid.Column="0"
-                   Grid.ColumnSpan="6"
-                   Margin="8"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Left"
-                   TextAlignment="Left"
-                   FontSize="14"/>
+                   Grid.Column="1"
+                   Grid.ColumnSpan="4"
+                   Margin="12,8,12,14"
+                   VerticalAlignment="Bottom"
+                   HorizontalAlignment="Stretch"
+                   TextAlignment="Center"
+                   FontSize="20"/>
         <Button x:Name="BtnExit"
+                Visibility="Collapsed"
                 Grid.Row="5"
                 Grid.Column="7"
                 Margin="16"

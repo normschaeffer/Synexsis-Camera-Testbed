@@ -167,16 +167,13 @@
       <Version>1.0.4</Version>
     </PackageReference>
     <PackageReference Include="Enkadia.Synexsis.Components.Cameras">
-      <Version>1.0.4</Version>
-    </PackageReference>
-    <PackageReference Include="Enkadia.Synexsis.Extensions">
-      <Version>1.0.0-CI-20190819-231627</Version>
+      <Version>1.0.5.916</Version>
     </PackageReference>
     <PackageReference Include="Enkadia.Synexsis.Utilities">
       <Version>1.0.5</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.2.9</Version>
+      <Version>6.2.10</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
