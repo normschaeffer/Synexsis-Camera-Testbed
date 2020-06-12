@@ -44,7 +44,7 @@ namespace Synexsis_Camera_Testbed
 
         #endregion 
         
-        public MainPage(string cameraVersion)
+        public MainPage()
         {
             this.InitializeComponent();
 
@@ -83,7 +83,7 @@ namespace Synexsis_Camera_Testbed
 
         #endregion
 
-        #region Tilt Functions - touch and right-click mouse
+        #region Tilt Functions - Hold and release on touch screens. For non-touch screens click and hold right mouse button to start, release to stop
         private async void BtnTiltUp_Holding(object sender, HoldingRoutedEventArgs e)
         {
             if (e.HoldingState == HoldingState.Started)
@@ -130,7 +130,7 @@ namespace Synexsis_Camera_Testbed
 
         #endregion
 
-        #region Pan Functions - touch and  mouse right-click
+        #region Pan Functions - Hold and release on touch screens. For non-touch screens click and hold right mouse button to start, release to stop
 
         private async void BtnPanLeft_Holding(object sender, HoldingRoutedEventArgs e)
         {
@@ -177,7 +177,7 @@ namespace Synexsis_Camera_Testbed
 
         #endregion
 
-        #region Zoom functions - touch and mouse right-click
+        #region Zoom functions - Hold and release on touch screens. For non-touch screens click and hold right mouse button to start, release to stop
 
         private async void BtnZoomIn_OnHolding(object sender, HoldingRoutedEventArgs e)
         {
