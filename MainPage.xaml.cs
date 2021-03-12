@@ -246,16 +246,18 @@ namespace Synexsis_Camera_Testbed
         
         private void BtnPreset1_OnClick(object sender, RoutedEventArgs e)
         {
-            Camera.SetPanPosition(_preset[0, 0], 20);
-            Camera.SetTiltPosition(_preset[0, 1], 20);
-            Camera.SetZoomPosition(_preset[0, 2], 20);
+            Camera.GetPreset(1);
+            //Camera.SetPanPosition(_preset[0, 0], 20);
+            //Camera.SetTiltPosition(_preset[0, 1], 20);
+            //Camera.SetZoomPosition(_preset[0, 2], 20);
         }
 
         private void BtnPreset2_OnClick(object sender, RoutedEventArgs e)
         {
-            Camera.SetPanPosition(_preset[1, 0], 20);
-            Camera.SetTiltPosition(_preset[1, 1], 20);
-            Camera.SetZoomPosition(_preset[1, 2], 20);
+            Camera.GetPreset(2);
+            //Camera.SetPanPosition(_preset[1, 0], 20);
+            //Camera.SetTiltPosition(_preset[1, 1], 20);
+            //Camera.SetZoomPosition(_preset[1, 2], 20);
         }
 
         private void BtnPreset3_OnClick(object sender, RoutedEventArgs e)
@@ -293,6 +295,8 @@ namespace Synexsis_Camera_Testbed
         {
             try
             {
+                
+
                 var sb = new StringBuilder();
 
                 var pan = await Camera.GetPanPosition();
@@ -336,13 +340,13 @@ namespace Synexsis_Camera_Testbed
         {
             /*
             //CoreApplication.Exit();
-
+        
             MessageDialog message = new MessageDialog("System Restarting") {Title = "Touch Panel Restarting"};
-
+        
             Thread.Sleep(2000);
-
+        
             AppRestartFailureReason result = await CoreApplication.RequestRestartAsync("System restarted");
-
+        
             if (result == AppRestartFailureReason.NotInForeground || result == AppRestartFailureReason.Other)
             {
                 //MessageDialog message = new MessageDialog("System Restarting");
