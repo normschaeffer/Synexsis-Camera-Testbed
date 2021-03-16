@@ -177,18 +177,16 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Enkadia.pfx" />
-    <None Include="Synexsis-Camera-Testbed_TemporaryKey.pfx" />
+    <None Include="synexsis-camera-testbed-temporary.snk" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>synexsis-camera-testbed-temporary.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>false</DelaySign>
